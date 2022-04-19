@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Letter">
         <activity
+            android:name=".activity.SignUp"
+            android:exported="false" />
+        <activity
             android:name=".activity.Login"
             android:exported="true">
             <intent-filter>
