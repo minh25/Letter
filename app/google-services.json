@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "583987418304",
-    "project_id": "letter-ce94a",
-    "storage_bucket": "letter-ce94a.appspot.com"
+    "project_number": "669019072419",
+    "project_id": "letter-5aaf6",
+    "storage_bucket": "letter-5aaf6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583987418304:android:1e227c312121dfa0370925",
+        "mobilesdk_app_id": "1:669019072419:android:4ad916b9a68ce1ef371c16",
         "android_client_info": {
           "package_name": "com.klm.letter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "583987418304-19tr0saq4ic3vi111l1sde0tuguub86m.apps.googleusercontent.com",
+          "client_id": "669019072419-t3ne4fcb62k1ehik05gq0t2vanb9gnvq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCDnMat5izEfHW7NKAIb634YL2dU54SO6M"
+          "current_key": "AIzaSyDxBqxpz7S-pTy8Y9doNBgunrSvNNcsoAU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "583987418304-19tr0saq4ic3vi111l1sde0tuguub86m.apps.googleusercontent.com",
+              "client_id": "669019072419-t3ne4fcb62k1ehik05gq0t2vanb9gnvq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
