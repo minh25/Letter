@@ -53,6 +53,7 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Intent intent = new Intent(Login.this, Home.class);
+                        finish();
                         startActivity(intent);
                     } else {
                         Toast.makeText(Login.this, "Authentication failed.",

@@ -15,7 +15,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.klm.letter.R;
+import com.klm.letter.model.User;
+
+import java.util.Objects;
 
 public class SignUp extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class SignUp extends AppCompatActivity {
     private Button button_signup;
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +59,20 @@ public class SignUp extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        addUserToDatabase(name, email, Objects.requireNonNull(mAuth.getCurrentUser()).getUid());
                         Intent intent = new Intent(SignUp.this, Home.class);
+                        finish();
                         startActivity(intent);
                     } else {
                         Log.w("SIGNUP_FAIL", "signInWithEmail:failure", task.getException());
                         Toast.makeText(SignUp.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void addUserToDatabase(String name, String email, String uid) {
+        mDbRef = FirebaseDatabase.getInstance().getReference();
+
+        mDbRef.child("user").child(uid).setValue(new User(name, email, uid));
     }
 }
