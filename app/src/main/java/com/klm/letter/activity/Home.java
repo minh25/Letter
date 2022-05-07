@@ -22,6 +22,7 @@ import com.klm.letter.adapter.UserAdapter;
 import com.klm.letter.model.User;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Home extends AppCompatActivity {
 
@@ -54,8 +55,9 @@ public class Home extends AppCompatActivity {
                 Log.d("UID", "MainID " + mAuth.getUid());
                 for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                     User user = userSnapshot.getValue(User.class);
+                    assert user != null;
                     Log.d("UID", "GuestID " + user.getUid());
-                    if (mAuth.getCurrentUser().getUid() != user.getUid()) {
+                    if (!Objects.requireNonNull(mAuth.getCurrentUser()).getUid().equals(user.getUid())) {
                         users.add(user);
                     }
                 }
